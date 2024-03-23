@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.example.grpc;
+
+service NumbersGenerator {
+  rpc GenerateNumbers(NumbersRequest) returns (stream NumbersResponse) {}
+}
+
+message NumbersRequest {
+  int32 firstValue = 1;
+  int32 lastValue = 2;
+}
+
+message NumbersResponse {
+  int32 value = 1;
+}
